@@ -6,24 +6,53 @@
   "description": "GH Activity",
   "ref": "github.com/ghanique/gh-flogo-activity",
   "homepage": "https://github.com/ghanique/gh-flogo-activity",
-  "settings": [
+  "input":[
     {
-      "name": "aSetting",
+      "name": "method",
+      "type": "string",
+      "required": true,
+      "allowed" : ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    },
+    {
+      "name": "uri",
       "type": "string",
       "required": true
-    }
-  ],
-  "input": [
+    },
     {
-      "name": "anInput",
+      "name": "proxy",
       "type": "string",
-      "required": true
+      "required": false
+    },
+    {
+      "name": "pathParams",
+      "type": "params"
+    },
+    {
+      "name": "queryParams",
+      "type": "params"
+    },
+    {
+      "name": "header",
+      "type": "params"
+    },
+    {
+      "name": "skipSsl",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "content",
+      "type": "any"
     }
   ],
   "output": [
     {
-      "name": "anOutput",
-      "type": "string"
+      "name": "result",
+      "type": "any"
+    },
+    {
+      "name": "status",
+      "type": "integer"
     }
   ]
 }
